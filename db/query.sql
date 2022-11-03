@@ -1,6 +1,7 @@
-/* Not sure if this is needed?!*/
+/*Join
 
-SELECT
-  favorite_books.book_name AS name, book_prices.price AS price
-FROM favorite_books
-JOIN book_prices ON favorite_books.book_price = book_prices.id;
+SELECT department_id
+FROM roleName
+JOIN department ON roleName.department_id = department_id;
+
+*/

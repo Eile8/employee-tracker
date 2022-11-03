@@ -1,4 +1,4 @@
-/*Ask questions in the terminal
+//Ask questions in the terminal
 const inquirer = require ('inquirer');
 //const fs = require('fs')
 

@@ -1,0 +1,17 @@
+3 tables 
+1. department: 
+- id: INT PRIMARY KEY
+- name: VARCHAR(30)
+
+2. ROLE: 
+- id: INT PRIMARY KEY
+- title: VARCHAR(30)
+- salary: DECIMAL
+- department_id: INT
+
+3. employee: 
+- id: INT PRIMARY KEY
+- first_name: VARCHAR(30)
+- last_name: VARCHAR(30)
+- role_id: INT(30)
+- manager_id: INT (NULL IF EMPLOYEE HAS NO MANAGER)
