@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-Department.init({
+Employee.init({
     // add properites here, ex:
     username: {
          type: DataTypes.STRING,
@@ -20,4 +20,4 @@ Department.init({
 }
 );
 
-module.exports=Department
+module.exports=Employee

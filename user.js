@@ -1,5 +1,5 @@
 //Ask questions in the terminal
-const inquirer = require ('inquirer');
+import inquirer from 'inquirer'
 //const fs = require('fs')
 
 
@@ -12,12 +12,9 @@ function questions() {
             message: 'what would you like to do?',
             choices: ["view all departments", "view all roles", "view all employees", "add a department", "add a role", "add an employee", "update an employee role"]
         },
-    ]).then((answers) => {
-        console.log("I got it!")
-    })
-}
-questions()
-       /* if (answers.options==="view all departments") {
+    ]).then(async (answers) => {
+        console.log({answers})
+        if (answers.options==="view all departments") {
             //sql: table shows dept names and ids
         } else if (answers.options==="view all roles") {
             //sql: table shows job title, role id, dept of the role, salary of the role
@@ -34,7 +31,7 @@ questions()
             ]) //add input to sql database
         } else if (answers.options==="add a role") {
             const role = await inquirer 
-            .prompt ({
+            .prompt ([
                 {
                     type:"input",
                     name: "role",
@@ -52,7 +49,7 @@ questions()
                     name: "salary", 
                     message: "What is your salary?",
                 },
-            })
+            ])
         } else if (answers.options==="add an employee") {
             const employee = await inquirer 
             .prompt ([
@@ -83,7 +80,13 @@ questions()
                 {
                     type: "list", 
                     name: "update", 
-                    choices: [/*select from the existing employee list in sql?!]*/
+                    choices: ["select from the existing employee list in sql?!"]
+                }
+            ])
+        }
+    })
+}
+questions()
 
 
 
