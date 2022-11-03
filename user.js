@@ -1,4 +1,4 @@
-//Ask questions in the terminal
+/*Ask questions in the terminal
 const inquirer = require ('inquirer');
 //const fs = require('fs')
 
@@ -13,7 +13,11 @@ function questions() {
             choices: ["view all departments", "view all roles", "view all employees", "add a department", "add a role", "add an employee", "update an employee role"]
         },
     ]).then((answers) => {
-        if (answers.options==="view all departments") {
+        console.log("I got it!")
+    })
+}
+questions()
+       /* if (answers.options==="view all departments") {
             //sql: table shows dept names and ids
         } else if (answers.options==="view all roles") {
             //sql: table shows job title, role id, dept of the role, salary of the role
@@ -79,18 +83,12 @@ function questions() {
                 {
                     type: "list", 
                     name: "update", 
-                    choices: [/*select from the existing employee list in sql?!*/]
-                }
-            ])
-        }
-        console.log("success")
-} 
-questions()
+                    choices: [/*select from the existing employee list in sql?!]*/
 
 
 
 //Gather all the inputs from the user and then populate into the table in sql. . 
-then((answers)=> {
+/*then((answers)=> {
     console.log(answers)
     
     fs.writeFile('README.md', markdown(answers), function (err) {

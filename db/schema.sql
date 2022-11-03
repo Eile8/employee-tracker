@@ -22,17 +22,18 @@ CREATE DATABASE employees_db;
 USE employees_db;
 
 /* table for department*/
-CREATE TABLE departments (
+CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  department_name VARCHAR (30)
+  department_name VARCHAR(30)
 );
 
 /* table for role*/
-CREATE TABLE role (
+CREATE TABLE roleName (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  department_id INT,
   title VARCHAR(30),
-  salary  INTEGER DECIMAL
-  FOREIGN KEY (department_id)
+  salary INTEGER,
+  FOREIGN KEY(department_id)
   REFERENCES department(id)
   /*ON DELETE SET NULL*/
 );
@@ -40,11 +41,11 @@ CREATE TABLE role (
 /* table for employee*/
 CREATE TABLE employee (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR (30),
-  last_name VARCHAR (30),
-  manager_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
-  /* validate */
-  FOREIGN KEY (role_id)
-  REFERENCES role(id)
+  manager_id INT,
+  roleName_id INT,
+  first_name VARCHAR(30),
+  last_name VARCHAR(30),
+  FOREIGN KEY(roleName_id)
+  REFERENCES roleName(id)
   /*ON DELETE SET NULL*/
 );
